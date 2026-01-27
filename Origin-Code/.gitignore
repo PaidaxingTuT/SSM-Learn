@@ -4,3 +4,9 @@
 
 # Maven build output
 target/
+
+# Ignore all XML files
+*.xml
+
+# Keep Maven pom
+!pom.xml
