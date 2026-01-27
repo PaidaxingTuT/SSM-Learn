@@ -11,6 +11,7 @@ public class App2 {
         BookService bookService = (BookService) context.getBean("service");
 
         bookService.save();
-        context.close();//关闭容器。暴力关闭，只能放在最后，不推荐使用
+        //context.close();//关闭容器。暴力关闭，只能放在最后，不推荐使用
+        context.registerShutdownHook(); //注册关闭钩子, JVM关闭时关闭容器，可以放在任意位置
     }
 }
