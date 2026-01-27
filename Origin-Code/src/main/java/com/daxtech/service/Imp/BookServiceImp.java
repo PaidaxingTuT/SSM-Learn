@@ -15,4 +15,12 @@ public class BookServiceImp implements BookService {
     public void setBookMapper(BookMapper bookMapper) {
         this.bookMapper = bookMapper;
     }
+
+    public void init(){
+        System.out.println("service init...");
+    }
+
+    public void destroy(){
+        System.out.println("service destroy...");
+    }
 }
