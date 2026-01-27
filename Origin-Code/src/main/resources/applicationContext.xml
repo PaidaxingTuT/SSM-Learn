@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--1.导入spring-context的依赖-->
+
+    <!--2.创建一个Spring的配置文件(applicationContext.xml)-->
+
+    <!--3.在配置文件中配置Bean-->
+
+    <bean id="bookMapper" class="com.daxtech.mapper.Imp.BookMapperImp"/>
+    <bean id="bookService" class="com.daxtech.service.Imp.BookServiceImp"/>
+
+
+</beans>
