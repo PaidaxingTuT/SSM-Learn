@@ -22,6 +22,10 @@ public class BookServiceImp implements BookService {
         this.bookMapper = bookMapper;
     }
 
+    /*public BookServiceImp(BookMapper bookMapper) {
+        this.bookMapper = bookMapper;
+    }*/
+
     public void init(){
         System.out.println("service init...");
     }
