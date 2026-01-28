@@ -16,6 +16,7 @@
         name属性表示要配置哪一个具体的属性
         ref属性表示参照哪一个bean-->
         <property name="bookMapper" ref="mapper"/>
+        <property name="num" value="10"/>
     </bean>
 
     <!--静态工厂、实例工厂（了解）-->
