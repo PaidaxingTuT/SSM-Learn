@@ -25,9 +25,9 @@ public class BookServiceImp implements BookService {
     public void save(){
         System.out.println("book service save");
         System.out.println("常规变量:" + num);
-        System.out.println("数组:" + Arrays.toString(arr));
+       /* System.out.println("数组:" + Arrays.toString(arr));
         System.out.println("map:" + map);
-        System.out.println("properties:" + prop);
+        System.out.println("properties:" + prop);*/
         bookMapper.save();
     }
 

@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+        ">
+
+
     <!--1.导入spring-context的依赖-->
 
     <!--2.创建一个Spring的配置文件(applicationContext.xml)-->
@@ -10,33 +18,22 @@
 
     <bean id="bookMapperRef" name="mapper" class="com.daxtech.mapper.Imp.BookMapperImp"/>
 
-    <bean id="bookService" name="service" class="com.daxtech.service.Imp.BookServiceImp" init-method="init" destroy-method="destroy">
-    <!--7.配置mapper与service的关系-->
+    <!--1.开启context命名空间-->
+    <!--2.使用context空间加载properties文件-->
+    <context:property-placeholder location="bookService.properties"/>
+
+
+    <bean id="bookService" name="service" class="com.daxtech.service.Imp.BookServiceImp" init-method="init"
+          destroy-method="destroy">
+        <!--7.配置mapper与service的关系-->
         <!--property标签表示配置当前bean的属性
         name属性表示要配置哪一个具体的属性
         ref属性表示参照哪一个bean-->
         <!--<constructor-arg name="bookMapper" ref="mapper"/>-->
+
+        <!--3.使用属性占位符读取properties中的属性-->
         <property name="bookMapper" ref="mapper"/>
-        <property name="num" value="10"/>
-        <property name="arr">
-            <array>
-                <value>1</value>
-                <value>2</value>
-                <value>3</value>
-            </array>
-        </property>
-        <property name="map">
-            <map>
-                <entry key="key1" value="value1"/>
-                <entry key="key2" value="value2"/>
-            </map>
-        </property>
-        <property name="prop">
-            <props>
-                <prop key="key1">value1</prop>
-                <prop key="key2">value2</prop>
-            </props>
-        </property>
+        <property name="num" value="${num}"/>
 
     </bean>
 
