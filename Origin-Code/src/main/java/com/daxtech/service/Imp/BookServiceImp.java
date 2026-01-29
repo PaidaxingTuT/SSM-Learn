@@ -17,7 +17,8 @@ public class BookServiceImp implements BookService {
         bookMapper.save();
     }
 
-    //6.提供set方法用于属性注入
+    //自动注入
+
     public void setBookMapper(BookMapper bookMapper) {
         this.bookMapper = bookMapper;
     }

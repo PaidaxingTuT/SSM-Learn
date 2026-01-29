@@ -10,15 +10,15 @@
 
     <bean id="bookMapperRef" name="mapper" class="com.daxtech.mapper.Imp.BookMapperImp"/>
 
-    <bean id="bookService" name="service" class="com.daxtech.service.Imp.BookServiceImp" init-method="init" destroy-method="destroy">
+    <bean id="bookService" name="service" class="com.daxtech.service.Imp.BookServiceImp" init-method="init" destroy-method="destroy" autowire="byType"/>
     <!--7.配置mapper与service的关系-->
         <!--property标签表示配置当前bean的属性
         name属性表示要配置哪一个具体的属性
         ref属性表示参照哪一个bean-->
         <!--<constructor-arg name="bookMapper" ref="mapper"/>-->
-        <property name="bookMapper" ref="mapper"/>
-        <property name="num" value="10"/>
-    </bean>
+        <!--<property name="bookMapper" ref="mapper"/>-->
+        <!--<property name="num" value="10"/>
+    </bean>-->
 
     <!--静态工厂、实例工厂（了解）-->
 
