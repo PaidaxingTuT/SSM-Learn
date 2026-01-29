@@ -20,7 +20,7 @@
 
     <!--1.开启context命名空间-->
     <!--2.使用context空间加载properties文件-->
-    <context:property-placeholder location="bookService.properties"/>
+    <context:property-placeholder location="bookService.properties" system-properties-mode="NEVER"/>
 
 
     <bean id="bookService" name="service" class="com.daxtech.service.Imp.BookServiceImp" init-method="init"
