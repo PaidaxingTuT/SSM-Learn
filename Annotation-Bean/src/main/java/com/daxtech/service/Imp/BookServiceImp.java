@@ -2,11 +2,13 @@ package com.daxtech.service.Imp;
 
 import com.daxtech.mapper.BookMapper;
 import com.daxtech.service.BookService;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 @Service
-@Scope("prototype")
+@Scope("singleton")
 public class BookServiceImp implements BookService {
 
     private BookMapper bookMapper;
@@ -20,5 +22,14 @@ public class BookServiceImp implements BookService {
         bookMapper.save();
     }
 
+    @PostConstruct
+    public void init() {
+        System.out.println("book service init");
+    }
+
+    @PreDestroy
+    public void destroy() {
+        System.out.println("book service destroy");
+    }
 
 }
