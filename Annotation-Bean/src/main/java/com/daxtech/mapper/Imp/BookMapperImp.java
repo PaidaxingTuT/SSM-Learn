@@ -1,9 +1,9 @@
 package com.daxtech.mapper.Imp;
 
 import com.daxtech.mapper.BookMapper;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
-@Component("bookMapper")
+@Repository("bookMapper")
 public class BookMapperImp implements BookMapper {
     //@Override
     public void save() {

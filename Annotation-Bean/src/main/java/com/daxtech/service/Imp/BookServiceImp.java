@@ -2,9 +2,9 @@ package com.daxtech.service.Imp;
 
 import com.daxtech.mapper.BookMapper;
 import com.daxtech.service.BookService;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class BookServiceImp implements BookService {
 
     private BookMapper bookMapper;
