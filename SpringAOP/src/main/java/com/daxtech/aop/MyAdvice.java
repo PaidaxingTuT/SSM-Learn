@@ -1,6 +1,7 @@
 package com.daxtech.aop;
 
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
@@ -22,6 +23,8 @@ public class MyAdvice {
 
     @Around("pt()")
     public void around(ProceedingJoinPoint pjp) throws Throwable {
+        Signature signature = pjp.getSignature();
+        System.out.println(signature.getDeclaringType());
         System.out.println("begin");
         pjp.proceed();
         System.out.println("end");
