@@ -14,4 +14,9 @@ public class BookMapperImpl implements BookMapper {
     public void update() {
         System.out.println("Bookmapper update");
     }
+
+    public int num(int num) {
+        System.out.println(num);
+        return num;
+    }
 }

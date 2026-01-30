@@ -9,6 +9,6 @@ public class App {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
         BookMapper bookMapper = context.getBean(BookMapper.class);
-        bookMapper.update();
+        bookMapper.num(10);
     }
 }
