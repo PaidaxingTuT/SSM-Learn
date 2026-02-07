@@ -1,13 +1,13 @@
 package com.daxtech;
 
 import com.daxtech.config.SpringConfig;
-import com.daxtech.service.BookService;
+import com.daxtech.controller.UserController;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class AppForAnnotation {
+public class App {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
-        BookService bookService = (BookService) context.getBean(BookService.class);
-        bookService.save();
+        UserController bean = context.getBean(UserController.class);
+        System.out.println(bean);
     }
 }
