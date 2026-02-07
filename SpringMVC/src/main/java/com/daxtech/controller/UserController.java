@@ -1,17 +1,15 @@
 package com.daxtech.controller;
 
 import com.daxtech.pojo.user;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
 public class UserController {
 
 
-    @RequestMapping(value = "/{age}", method = RequestMethod.POST)
+    //@RequestMapping(value = "/{age}", method = RequestMethod.POST)
+    @PostMapping("/{age}")
     public user post(@PathVariable Integer age) {
         user user = new user();
         user.setName("post");
@@ -19,7 +17,8 @@ public class UserController {
         return user;
     }
 
-    @RequestMapping(value = "/{age}", method = RequestMethod.DELETE)
+    //@RequestMapping(value = "/{age}", method = RequestMethod.DELETE)
+    @DeleteMapping("/{age}")
     public user delete(@PathVariable Integer age) {
         user user = new user();
         user.setName("delete");
@@ -27,7 +26,8 @@ public class UserController {
         return user;
     }
 
-    @RequestMapping(value = "/{age}", method = RequestMethod.PUT)
+    //@RequestMapping(value = "/{age}", method = RequestMethod.PUT)
+    @PutMapping("/{age}")
     public user put(@PathVariable Integer age) {
         user user = new user();
         user.setName("put");
@@ -35,7 +35,8 @@ public class UserController {
         return user;
     }
 
-    @RequestMapping(value = "/{age}", method = RequestMethod.GET)
+    //@RequestMapping(value = "/{age}", method = RequestMethod.GET)
+    @GetMapping("/{age}")
     public user get(@PathVariable Integer age) {
         user user = new user();
         user.setName("get");
