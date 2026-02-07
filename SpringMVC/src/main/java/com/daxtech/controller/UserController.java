@@ -9,11 +9,8 @@ public class UserController {
 
 
     //@RequestMapping(value = "/{age}", method = RequestMethod.POST)
-    @PostMapping("/{age}")
-    public user post(@PathVariable Integer age) {
-        user user = new user();
-        user.setName("post");
-        user.setAge(age);
+    @PostMapping
+    public user post(@RequestBody user user) {
         return user;
     }
 
