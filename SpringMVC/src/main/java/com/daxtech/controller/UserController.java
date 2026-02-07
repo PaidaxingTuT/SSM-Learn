@@ -5,11 +5,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
+@ResponseBody
+@RequestMapping("/users")
 public class UserController {
 
 
-    @RequestMapping(value = "/users/{age}", method = RequestMethod.POST)
-    @ResponseBody
+    @RequestMapping(value = "/{age}", method = RequestMethod.POST)
     public user post(@PathVariable Integer age) {
         user user = new user();
         user.setName("post");
@@ -17,8 +18,7 @@ public class UserController {
         return user;
     }
 
-    @RequestMapping(value = "/users/{age}", method = RequestMethod.DELETE)
-    @ResponseBody
+    @RequestMapping(value = "/{age}", method = RequestMethod.DELETE)
     public user delete(@PathVariable Integer age) {
         user user = new user();
         user.setName("delete");
@@ -26,8 +26,7 @@ public class UserController {
         return user;
     }
 
-    @RequestMapping(value = "/users/{age}", method = RequestMethod.PUT)
-    @ResponseBody
+    @RequestMapping(value = "/{age}", method = RequestMethod.PUT)
     public user put(@PathVariable Integer age) {
         user user = new user();
         user.setName("put");
@@ -35,8 +34,7 @@ public class UserController {
         return user;
     }
 
-    @RequestMapping(value = "/users/{age}", method = RequestMethod.GET)
-    @ResponseBody
+    @RequestMapping(value = "/{age}", method = RequestMethod.GET)
     public user get(@PathVariable Integer age) {
         user user = new user();
         user.setName("get");
