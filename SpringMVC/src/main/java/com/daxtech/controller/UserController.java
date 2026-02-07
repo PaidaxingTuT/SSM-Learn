@@ -2,10 +2,7 @@ package com.daxtech.controller;
 
 import com.daxtech.pojo.user;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class UserController {
@@ -17,12 +14,12 @@ public class UserController {
         return "{likes:"+likes+"}";
     }
 
-    @RequestMapping(value = "/users",method = RequestMethod.POST)
+    @RequestMapping(value = "/users/{age}",method = RequestMethod.POST)
     @ResponseBody
-    public user toJson() {
+    public user toJson(@PathVariable Integer age) {
         user user = new user();
         user.setName("daxtech");
-        user.setAge(18);
+        user.setAge(age);
         return user;
     }
 }
