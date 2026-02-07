@@ -7,18 +7,39 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class UserController {
 
-    @RequestMapping("/save")
+
+    @RequestMapping(value = "/users/{age}", method = RequestMethod.POST)
     @ResponseBody
-    public String save(@RequestParam String likes){
-        System.out.println(likes);
-        return "{likes:"+likes+"}";
+    public user post(@PathVariable Integer age) {
+        user user = new user();
+        user.setName("post");
+        user.setAge(age);
+        return user;
     }
 
-    @RequestMapping(value = "/users/{age}",method = RequestMethod.POST)
+    @RequestMapping(value = "/users/{age}", method = RequestMethod.DELETE)
     @ResponseBody
-    public user toJson(@PathVariable Integer age) {
+    public user delete(@PathVariable Integer age) {
         user user = new user();
-        user.setName("daxtech");
+        user.setName("delete");
+        user.setAge(age);
+        return user;
+    }
+
+    @RequestMapping(value = "/users/{age}", method = RequestMethod.PUT)
+    @ResponseBody
+    public user put(@PathVariable Integer age) {
+        user user = new user();
+        user.setName("put");
+        user.setAge(age);
+        return user;
+    }
+
+    @RequestMapping(value = "/users/{age}", method = RequestMethod.GET)
+    @ResponseBody
+    public user get(@PathVariable Integer age) {
+        user user = new user();
+        user.setName("get");
         user.setAge(age);
         return user;
     }
