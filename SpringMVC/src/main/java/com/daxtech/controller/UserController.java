@@ -1,5 +1,6 @@
 package com.daxtech.controller;
 
+import com.daxtech.pojo.user;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,5 +14,14 @@ public class UserController {
     public String save(@RequestParam String likes){
         System.out.println(likes);
         return "{likes:"+likes+"}";
+    }
+
+    @RequestMapping("/json")
+    @ResponseBody
+    public user toJson() {
+        user user = new user();
+        user.setName("daxtech");
+        user.setAge(18);
+        return user;
     }
 }
