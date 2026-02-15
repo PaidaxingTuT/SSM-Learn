@@ -12,17 +12,17 @@ public class Result<T> {
     private Integer code;
     private String msg;
 
-    public static <T> Result<T> success(T data) {
+    public static <T> Result<T> success(T data,Integer code) {
         Result<T> result = new Result<>();
         result.setData(data);
-        result.setCode(200);
+        result.setCode(code);
         result.setMsg("success");
         return result;
     }
 
-    public static <T> Result<T> error(String msg) {
+    public static <T> Result<T> error(String msg,Integer code) {
         Result<T> result = new Result<>();
-        result.setCode(404);
+        result.setCode(code);
         result.setMsg(msg);
         return result;
     }
