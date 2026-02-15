@@ -1,5 +1,6 @@
 package com.daxtech.springboot.Controller;
 
+import com.daxtech.springboot.Pojo.Code;
 import com.daxtech.springboot.Pojo.Result;
 import com.daxtech.springboot.Service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class BookController {
     @GetMapping
     public Result<String> check() {
         String check = bookService.check();
-        return Result.success(check);
+        return Result.success(check, Code.SUCCESS.getCode());
     }
 }
 
