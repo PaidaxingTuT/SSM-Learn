@@ -17,8 +17,7 @@ class ApplicationTests {
     void textByPages() {
 
         LambdaQueryWrapper<Book> lqw = new LambdaQueryWrapper<>();
-        lqw.lt(Book::getId, 3).gt(Book::getId, 1);
-
+        lqw.lt(Book::getId, 1).or().gt(Book::getId, 3);
         IPage page = new Page(1, 2);
         bookMapper.selectPage(page, null);
         System.out.println("当前页：" + page.getCurrent());
