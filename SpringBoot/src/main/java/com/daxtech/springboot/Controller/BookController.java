@@ -18,7 +18,7 @@ public class BookController {
     @GetMapping
     public Result<String> check() {
         String check = bookService.check();
-        return Result.success(check, Code.SUCCESS.getCode());
+        return Result.success(check, Code.SUCCESS);
     }
 }
 
